@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <title>CTS Python</title>
+    <style>
+        ::selection{
+            color: teal;
+            background-color: black;
+        }
+
+        body{
+            font-size: large;
+            background-color: #0d101e;
+            text-align: center;
+        }
+
+        h1{
+            color: deepskyblue;
+            text-shadow: 0px 0px 1px deepskyblue;
+        }
+
+        p{
+            color: #f92672;
+        }
+
+        pre{
+            text-align: left;
+        }
+
+        div{
+            background: #272822; 
+            overflow:auto;  
+            border:solid goldenrod; 
+            border-width: .1em .1em .1em .6em; 
+            padding: .2em .6em;
+        }
+    
+        .center {
+            margin: auto;
+            width: 70%;
+        }
+
+        img{
+            cursor: pointer;
+        }
+    </style>
+
+    <script>     
+        var music = new Audio('audio.mp3');
+        music.loop = true;
+        
+        function song(){
+            if(music.paused){
+                music.play();
+            }
+            else{
+                music.pause();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1 style="color: goldenrod; text-shadow: 0px 0px 3px goldenrod; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Cognizant Python</h1>
+    <img id="music" alt="music" src="music.png" width="60" height="60" onclick="song()">
+
+    <h1>1. AEIMA's Online Courses</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter number of courses: &quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid no. of courses&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">report</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Enter name of the subject and marks respectively:&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sub</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input()</span>
+    <span style="color: #f8f8f2">mark</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input())</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">mark</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">101</span><span style="color: #f8f8f2">):</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid mark&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">mark</span><span style="color: #f92672">&gt;=</span><span style="color: #ae81ff">80</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">report</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(</span> <span style="color: #f8f8f2">(sub,</span> <span style="color: #f8f8f2">mark)</span> <span style="color: #f8f8f2">)</span>
+
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;The courses you have cleared are:&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">sub_mark</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">report:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(sub_mark[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">sub_mark[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">])</span>
+</pre>
+    </div>
+
+    <h1>2. Alien's Visit</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Hello &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter the name: &quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;! Welcome to our planet Earth&quot;</span><span style="color: #f8f8f2">)</span>
+</pre>
+    </div>
+
+    <h1>3. Arrange Names</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter number of names:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid Input&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">names</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Enter the number of names:&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input()</span>
+    <span style="color: #f8f8f2">names</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(name)</span>
+
+<span style="color: #f8f8f2">names</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sort()</span>
+<span style="color: #f8f8f2">names</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sort(key</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">len)</span>
+<span style="color: #f8f8f2">sorted_names</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">names[::</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;The sorted name list is:&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">name</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">sorted_names:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(name)</span>
+</pre>
+    </div>
+
+    <h1>4. Copy the File</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;file_in.txt&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;r&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">file_1:</span>
+    <span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;file_out.txt&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;w&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">file_2:</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">line</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">file_1:</span>
+            <span style="color: #f8f8f2">file_2</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(line)</span>
+
+<span style="color: #66d9ef">with</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;file_out.txt&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;r&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">file:</span>
+    <span style="color: #f8f8f2">contents</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">file</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(contents)</span>
+</pre>
+    </div>
+
+    <h1>5. Farewell</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">greet</span>
+
+<span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter the senior&#39;s name: &quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(greet</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">message,</span> <span style="color: #f8f8f2">end</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39; &#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">greet</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">greet(name)</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Documentation string: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">greet</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__doc__)</span>
+</pre>
+    </div>
+    <p>Module greet.py</p>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #e6db74">&#39;&#39;&#39;Module for Greeting&#39;&#39;&#39;</span>
+
+<span style="color: #f8f8f2">message</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Hello&quot;</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">greet</span><span style="color: #f8f8f2">(name):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Mr.&quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">name</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;, Welcome to the farewell Party!!!&quot;</span><span style="color: #f8f8f2">)</span>    
+</pre>
+    </div>
+
+    <h1>6. Income Tax</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+
+<span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter the age:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">age</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">18</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">101</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;Invalid Age&#39;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+    
+<span style="color: #f8f8f2">income</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter the income:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">income</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;Invalid Income&#39;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">None</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">60</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">250000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">500000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">20</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">30</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">80</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">300000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">500000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">20</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">30</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">500000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+    <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">income</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">1000000</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">20</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">tax</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">30</span>
+
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;The Tax amount is: %.2f&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">round(income</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">tax</span><span style="color: #f92672">/</span><span style="color: #ae81ff">100</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">))</span>
+</pre>
+    </div>
+
+    <h1>7. News Report Generation</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">checkInput</span><span style="color: #f8f8f2">(c):</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(c</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">):</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid input&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">dead_count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Dead Count:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">checkInput(dead_count)</span>
+
+<span style="color: #f8f8f2">injured_count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Injured Count:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">checkInput(injured_count)</span>
+
+<span style="color: #f8f8f2">safe_count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Safe Count:</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">checkInput(safe_count)</span>
+
+<span style="color: #f8f8f2">report</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">f</span><span style="color: #e6db74">&quot;&quot;&quot;</span>
+<span style="color: #e6db74">TSUNAMI REPORT OF JAPAN</span>
+<span style="color: #e6db74">The number of people</span>
+<span style="color: #e6db74">Dead:{dead_count}</span>
+<span style="color: #e6db74">Injured:{injured_count}</span>
+<span style="color: #e6db74">Safe:{safe_count}</span>
+
+<span style="color: #e6db74">Please help the people who are suffering!!!</span>
+<span style="color: #e6db74">&quot;&quot;&quot;</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(report)</span>
+</pre>
+    </div>
+
+    <h1>8. Palindrome</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f8f8f2">string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter the word: &quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">lower()</span>
+<span style="color: #f8f8f2">string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">string</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">replace(</span><span style="color: #e6db74">&#39; &#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(string</span><span style="color: #f92672">==</span><span style="color: #f8f8f2">string[::</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Yes, the string is a palindrome !&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;No, the string is not a palindrome !&quot;</span><span style="color: #f8f8f2">)</span>
+</pre>
+    </div>
+
+    <h1>9. Pass or Fail</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter the no. of subjects: &quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid no. of subjects&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">pass_count</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+<span style="color: #f8f8f2">fail_count</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Enter the marks:&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #f8f8f2">mark</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input())</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">mark</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">101</span><span style="color: #f8f8f2">):</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid mark&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">mark</span><span style="color: #f92672">&gt;</span><span style="color: #ae81ff">50</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">pass_count</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">1</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">fail_count</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">1</span>
+
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;No. of subjects passed:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">pass_count)</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;No. of subjects failed:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">fail_count)</span>
+</pre>
+    </div>
+
+    <h1>10. Password Protection</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">sys</span>
+
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter the total no.of plots: &quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">21</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid Input&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+
+<span style="color: #f8f8f2">plots</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Enter the numbers of each plot:&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #f8f8f2">num</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input())</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">num</span><span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid Input&quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #f8f8f2">sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">exit()</span>
+    <span style="color: #f8f8f2">plots</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(num)</span>
+
+<span style="color: #f8f8f2">avg</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum(plots)</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;The password for the file is: %.2f&quot;</span> <span style="color: #f92672">%</span> <span style="color: #f8f8f2">round(avg,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">))</span>
+</pre>
+    </div>
+
+    <h1>11. Rythm Composer</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">find_prime</span><span style="color: #f8f8f2">(start,</span> <span style="color: #f8f8f2">end):</span>
+    <span style="color: #f8f8f2">primes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+    <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">num</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(start,</span> <span style="color: #f8f8f2">end</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">):</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">num</span><span style="color: #f92672">==</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #66d9ef">continue</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,num</span><span style="color: #f92672">//</span><span style="color: #ae81ff">2</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">):</span>
+            <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(num</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">):</span>
+                <span style="color: #66d9ef">break</span>
+        <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">primes</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(num)</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">primes</span>
+
+<span style="color: #f8f8f2">start</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input())</span>
+<span style="color: #f8f8f2">end</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input())</span>
+
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">start</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">0</span> <span style="color: #f92672">or</span> <span style="color: #f8f8f2">end</span><span style="color: #f92672">&lt;</span><span style="color: #ae81ff">0</span> <span style="color: #f92672">or</span> <span style="color: #f8f8f2">start</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">end:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid range&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">start</span><span style="color: #f92672">==</span><span style="color: #f8f8f2">end</span> <span style="color: #f92672">or</span> <span style="color: #f8f8f2">(start</span><span style="color: #f92672">==</span><span style="color: #ae81ff">0</span> <span style="color: #f92672">and</span> <span style="color: #f8f8f2">end</span><span style="color: #f92672">==</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;There is no prime numbers in this range&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f8f8f2">primes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">find_prime(start,</span> <span style="color: #f8f8f2">end)</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">len(primes)</span><span style="color: #f92672">!=</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">prime</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">primes:</span>
+            <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(prime,end</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39; &#39;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;There is no prime numbers in this range&quot;</span><span style="color: #f8f8f2">)</span>
+</pre>
+    </div>
+
+    <h1>12. Search Student Data</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter the no of student details to be created : &quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">student_details</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Name: &quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Age: &quot;</span><span style="color: #f8f8f2">))</span>
+    <span style="color: #f8f8f2">location</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Location: &quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">student_details</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append({</span><span style="color: #e6db74">&#39;Name&#39;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">name,</span> <span style="color: #e6db74">&#39;Age&#39;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">age,</span> <span style="color: #e6db74">&#39;Location&#39;</span><span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">location})</span>
+
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">Here&#39;s the list of student details : &quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">student_detail</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">student_details:</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(student_detail)</span>
+
+<span style="color: #f8f8f2">count</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+<span style="color: #f8f8f2">search_location</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">Enter the training lcoation: &quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">student_detail</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">student_details:</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(student_detail[</span><span style="color: #e6db74">&#39;Location&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">search_location):</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(count</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">):</span>
+            <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Student(s) enrolled in this training location: &quot;</span><span style="color: #f8f8f2">)</span>
+        <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(student_detail[</span><span style="color: #e6db74">&#39;Name&#39;</span><span style="color: #f8f8f2">])</span>
+        <span style="color: #f8f8f2">count</span> <span style="color: #f92672">+=</span> <span style="color: #ae81ff">1</span>
+<span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(count</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Invalid location&quot;</span><span style="color: #f8f8f2">)</span>
+</pre>
+    </div>
+
+    <h1>13. Store Student Data</h1>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter number of students: &quot;</span><span style="color: #f8f8f2">))</span>
+
+<span style="color: #f8f8f2">details</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&quot;</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(n):</span>
+    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">For student&quot;</span><span style="color: #f8f8f2">,i</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter name: &quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">score</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter the score: &quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">details</span> <span style="color: #f92672">+=</span> <span style="color: #e6db74">&#39;Name: &#39;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">name</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&#39; Score: &#39;</span><span style="color: #f92672">+</span> <span style="color: #f8f8f2">score</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&#39;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&#39;</span>
+
+<span style="color: #f8f8f2">file</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;output_data.txt&#39;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&#39;w&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">file</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(details)</span>
+<span style="color: #f8f8f2">file</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
+</pre>
+    </div>
+
+    <h1>14. Time Table Planning</h1>
+    <div class="center"><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">from</span> <span style="color: #f8f8f2">date</span> <span style="color: #f92672">import</span> <span style="color: #f92672">*</span>
+
+<span style="color: #f8f8f2">year</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter year as 4 digits (e.g: 2002):&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">monthNo</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">int(input(</span><span style="color: #e6db74">&quot;Enter month number:&quot;</span><span style="color: #f8f8f2">))</span>
+
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Year:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Leap Year&quot;</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">is_leap(year)</span> <span style="color: #66d9ef">else</span> <span style="color: #e6db74">&quot;Not Leap Year&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Month Name:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">month_name(monthNo))</span>
+<span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Days in month:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">days_in_month(monthNo,</span> <span style="color: #f8f8f2">year))</span>
+</pre>
+    </div>
+    <p>Module date.py</p>
+    <div class="center">
+<pre style="margin: 0; line-height: 125%">
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">calendar</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">is_leap</span><span style="color: #f8f8f2">(year):</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">calendar</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">isleap(year)</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">month_name</span><span style="color: #f8f8f2">(no):</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">calendar</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">month_name[no]</span>
+
+<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">days_in_month</span><span style="color: #f8f8f2">(month,</span> <span style="color: #f8f8f2">year):</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">calendar</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">monthrange(year,</span> <span style="color: #f8f8f2">month)[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span>
+</pre>
+    </div>
+
+</body>
+</html>
